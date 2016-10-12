@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Confirmation Page</title>
+</head>
+<body>
+  <h1>Friend Information To Be Deleted</h1>
+  {% for friend in all_friends: %}
+     <p>ID: {{ friend['id'] }} | First Name: {{ friend['first_name'] }} | Last Name: {{ friend['last_name'] }} | Occupation: {{ friend['occupation'] }}</p>
+  {% endfor %}
+  <hr>
+  <h2>Please confirm that you would like to delete this friend...</h2>
+  <form action='/remove_friend/{{friend_id}}' method='POST'>
+    <input type="submit" value="Remove Friend">
+  </form>
+  <form action='/home' method='POST'>
+    <input type="submit" value="Keep Friend">
+  </form>
+</body>
+</html>
